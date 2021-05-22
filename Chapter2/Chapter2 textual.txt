@@ -1,0 +1,115 @@
+2.1 int,long,long long,short长度不同，int,short-16bit long-32bit long long-64bit;
+    unsigned只能表示正数，signed可以表示正数和负数；
+    float最小尺寸为6位有效数字，double最小尺寸为10位有效数字。
+
+2.2 利率：百分数，用小数表示，范围为[-1,1]，所以double或float更好；
+    本金：一般会有小数，所以double或float更好；
+    付款：涉及到与本金间的计算，需要和本金使用一种类型，也就是double或float。
+
+2.3 32, 4294967264, 32, -32, 0, 0
+
+2.5 a) char, 宽char, String, 宽String
+    b) int, unsigned int, long int, unsigned long int, 八进制整形, 十六进制整形
+    c) double, float, long double
+    d) int, unsigned int, double, double
+
+2.6 有，第一行是10进制整数，第二行是八进制整数，其中month = 09不合法。
+
+2.7 a) Who goes with Fergus?(换行), String
+    b) 31.4, long double
+    c) 1024, float
+    d) 3.14, long double
+
+2.9 a) 非法，需要先声明变量再打印 改正：int input_value = 0; std::cin >> input_value;
+    b) 非法，narrowing conversion of '3.1400000000000001e+0' from 'double' to 'int' inside { }，改正:int i = 3;
+    c) 如果之前有名叫wage的变量是正确的，否则会报错。改正：double wage; double salary = wage = 9999.99;
+    d) 正确
+
+2.10 "", 0, "", 0
+
+2.11 定义，定义，声明
+
+2.12 a（关键字）,c(-为非法字符),d(数字开头)非法
+
+2.13 局部变量覆盖全局变量，所以j为100
+
+2.14 100 45
+
+2.15 d：引用必须要初始化；b：引用类型的初始值必须是一个对象
+
+2.16 a) 合法，给d赋值3.14159
+     b) 合法，将i赋值给d
+     c) 合法，将d赋值给i
+     d) 合法，将d赋值给i
+
+2.17 10 10，因为定义引用后，对其所有操作都是在与之绑定的对象上的
+
+2.19 第一，指针本身为一个对象，生命周期内可先后指向几个不同的对象；
+     第二，指针无需在定义时赋初值，会有一个随机值。
+
+2.20 将i的值平方,p的地址不变
+
+2.21 a) 非法，没有类型double*,正确为double *dp
+     b) 非法，不能把int变量直接赋值给指针
+     c) 合法
+
+2.22 第一行，如果p为nullptr,不进if
+     第二行，如果p为0，不进if
+
+2.23 不一定，一个未初始化的指针指向的内存区域可能无效可能未知，但是这个指针仍然会被当作指针所指的对象解析。
+    （要是能轻易做到的话C程序就不容易出内存方面的bug了。引用自https://www.zhihu.com/question/24331527）
+
+2.24 因为int *类型的值不能用于初始化long *类型的实体，而void*可用于存放任意对象的地址
+
+2.25 a) ip为指向int指针，i为int，r为i的引用
+     b) i是int，ip为nullptr
+     c) ip为指向int指针，ip2为int
+
+2.26 a) 不合法，没初始化
+     b) 合法
+     c) cnt已存在合法
+     d）不合法，常量不能改变值
+
+2.27 a) 不合法，需要引用对象
+     b) 合法，将i2地址赋值给指向常量的指针p2
+     c) 合法，常量引用
+     d) 合法，常量引用
+     e) 合法，常量引用
+     f) 不合法，引用不能为常量
+     g) 合法，常量引用
+
+2.28 a) 不合法，没初始化
+     b) 不合法，没初始化
+     c) 不合法，没初始化
+     d) 不合法，没初始化
+     e) 合法，但是打印*p时会出现异常，p为地址
+
+2.29 a) 合法，将常量赋值
+     b) 不合法，将指向常量的指针赋值给另一个非常量指针不行
+     c) 不合法，需要p1为指向常量的指针
+     d) 不合法，指向int常量对象的指向常量的指针不能被赋值
+     e) 不合法，指向常量的指针不能被赋值
+     f) 不合法，常量不能被赋值
+
+2.30 v2顶层，v1普通int，p1普通指针，r1普通引用，p2为底层，p3为顶层和底层都有，r2底层
+
+2.31 a) 顶层const:指的是本身不可以被改变。所以可以赋值。
+     b) p1为非常量，p2是常量，所以不能赋值
+     c) 底层const拷贝需要相同底层constant，所以不能赋值
+     d) 因为p3既有底层又有顶层，所以不能赋值
+     e) 因为p3既有底层又有顶层，p2是底层，所以可以赋值
+
+2.32 不合法，把null改成nullptr
+
+2.33 a=42(r为引用，i为整数);b=42(ci的顶层const被忽略);c=42(引用ci);
+     报错(d为int指针不能被int赋值)；报错(e为指向常量的指针不能被int赋值)；报错(f是常量不能被赋值)
+     
+2.36 a-int-4, b-int-4, c-int-4, d-int&-4
+
+2.37 a-int-3, b-int-4, c-int-3, d-int&-3
+
+2.38 区别是当引用类型被当作参数时，auto声明其为所指对象类型（int），decltype声明其为引用（int&）
+     int a = 0;auto b = a;decltype(a) c = 2;//bc都为int
+     int a = 0,&r = i;auto b = r;decltype(r) c = i;//b为int，c为int&
+
+2.39 错误，应输入“;”
