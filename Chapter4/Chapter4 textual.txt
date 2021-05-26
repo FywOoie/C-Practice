@@ -1,0 +1,94 @@
+4.1 105
+
+4.2 *(vec.begin())
+    (*vec.begin() + 1)
+
+4.3 可以接受，给了程序很大的灵活空间
+
+4.4 91
+
+4.5 -86 -18 0 -2
+
+4.6  i%2 == 0 ? "偶数" : "奇数";
+
+4.7 超出该类型可以表示的最大范围
+    short i1 = 32767; i1++;
+    int i2 = 32767; i2++;
+    unsgined i3 = 0; i3--;
+
+4.8 &&等于||大于==
+
+4.9 if语句的条件为：若cp和*cp都不为空，则为true
+    定义中cp为指针，*cp为字符串，都不会空，返回true
+
+4.11 if((a > b) && (b > c) && (c > d))
+
+4.12 由操作符顺序，！=在<后面，所以含义为i不等于j<k输出的逻辑值时
+
+4.13 a) d = 3.0 i = 3
+     b) d = 3.5 i = 3
+
+4.14 a)出错，变量不能赋值给int
+     b)返回true，将i赋值42
+
+4.15 不能把int*赋值给int
+     dval = ival = *pi = 0;
+
+4.16 a) 永远true，if((p = getPtr()) != 0)
+     b) 永远true，if(i == 1024)
+
+4.17 前置：先加后运算；后置：先运算后加
+
+4.18 整体向后移一位，最后有一位超出索引，值不确定
+
+4.19 a) 检查ptr是否为空指针并且看ptr指向元素是否为0
+     b) 看ival和ival后面的值是否都不为0
+     c) 不合法，应该改成vec[ival] >= vec[ival+1]
+
+4.20 a) 合法，iterator先向后移一位再指向元素
+     b) 不合法，指向string的指针++没意义
+     c) 不合法，指针没有empty()
+     d) 合法，等价于iter.empty()
+     e) 不合法，应该是*++iter
+     f) 合法，先判断后赋值
+
+4.23 相等大于条件大于赋值，应该改为string p1 = s + (s.size() - 1 == "s" ? "" : "s");
+
+4.24 程序不会输出想要的结果
+
+4.25 ~0111 0001 = 1000 1110,再提升成int左移6位
+     1111 1111 1111 1111 1110 0011 1000 0000
+
+4.26 int也占32位，所以没影响
+
+4.27 a) 3
+     b) 7
+     c) true
+     d) true
+
+4.30 a) (sizeof x) + y
+     b) sizeof (p -> mem[i])
+     c) (sizeof a) < b
+     d) sizeof (f())
+
+4.32 ptr和ix判断一样
+
+4.33 ,级别最低。等同于someValue ? (++x,++y) : (--x,--y)
+
+4.34 a) float to boolean
+     b) float to double and int to double
+     c) char to int and int to double
+
+4.35 a) char to int
+     b) int to double to float
+     c) unsgined to float
+     d) int and float to double to char
+
+4.36 i *= static_cast<int>d;
+
+4.37 a) pv = const_cast<void*>ps;
+     b) i = static_cast<int>(*pc);
+     c) pv = static_cast<void*> &d;
+     d) pc = static_cast<char*> px;
+
+4.38 先j除以i，得到的int转成double
