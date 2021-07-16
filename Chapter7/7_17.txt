@@ -1,0 +1,2 @@
+7.17  struct与class有区别。struct是c风格的结构体，class是c++风格的类；
+    strcut默认访问权限为public，而class为private。

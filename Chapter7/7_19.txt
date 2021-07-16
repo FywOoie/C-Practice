@@ -1,0 +1,2 @@
+getters和setters是public（可以访问内部变量），还有print，read函数，构造函数（外部可调用函数）。
+两个属性是private，因为我们不想让外部类肆意修改它们。
