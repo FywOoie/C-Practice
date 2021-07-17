@@ -1,0 +1,1 @@
+Sales_data里的属性都是private的，所以不是聚合类，需要把三个private的属性按顺序排好。
