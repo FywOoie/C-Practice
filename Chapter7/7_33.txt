@@ -1,0 +1,1 @@
+函数声明时，应该是Screen::pos Screen::size() const

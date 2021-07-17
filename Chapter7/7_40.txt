@@ -1,0 +1,3 @@
+Tree
+属性：vector<leaf>,root,color,height
+方法：growLeaf,die,fly,growHeight,growLeaf,fallLeaf,changeColor
